@@ -9,6 +9,8 @@ import (
 type User struct {
 	Username string
 	Password string
+	Phone string
+	Email string
 }
 
 func tableHandler(formatter *render.Render) http.HandlerFunc {
@@ -27,6 +29,8 @@ func tableHandler(formatter *render.Render) http.HandlerFunc {
         formatter.HTML(w, http.StatusOK, "table", struct {
 			Username string
             Password string
-		}{Username:user.Username, Password:user.Password})
+			Phone string
+			Email string
+		}{Username:user.Username, Password:user.Password, Phone:user.Phone, Email:user.Email})
     }
 }
