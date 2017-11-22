@@ -7,6 +7,6 @@ import (
 
 func unknownHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
-		formatter.JSON(w, http.StatusOK, "501 not completed")
+		formatter.JSON(w, http.StatusOK, "501 unknown")
 	}
 }
