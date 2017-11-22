@@ -4,6 +4,6 @@ $(document).ready(function() {
     }).then(function(data) {
        $('.greeting-id').append(data.id);
        $('.greeting-content').append(data.content);
-	$('.greeting-age').append(data.age);
+	   $('.greeting-name').append(data.name);
     });
 });
