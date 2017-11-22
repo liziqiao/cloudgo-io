@@ -3,7 +3,7 @@ package service
 import (
 	"net/http"
 	"os"
-
+	
 	"github.com/codegangsta/negroni"
 	"github.com/gorilla/mux"
 	"github.com/unrolled/render"
@@ -42,8 +42,8 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 	mx.HandleFunc("/api/unknown", unknownHandler(formatter)).Methods("GET")
 	mx.PathPrefix("/static").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(webRoot+"/assets/"))))
 	mx.HandleFunc("/", homeHandler(formatter)).Methods("GET")
-	mx.HandleFunc("/login", loginHandler(formatter)).Methods("GET")
-	mx.HandleFunc("/login", tableHandler(formatter)).Methods("POST")
+	mx.HandleFunc("/register", registerHandler(formatter)).Methods("GET")
+	mx.HandleFunc("/register", tableHandler(formatter)).Methods("POST")
 	mx.PathPrefix("/").Handler(http.FileServer(http.Dir(webRoot + "/assets/")))
 
 }
