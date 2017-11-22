@@ -2,7 +2,6 @@ package main
 
 import (
 	"os"
-	//直接调用自己文件夹下的service包
 	"github.com/liziqiao/cloudgo-io/service"
 	flag "github.com/spf13/pflag"
 )
